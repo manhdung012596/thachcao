@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thạch Cao Nguyên Vũ - Thi Công & Vật Tư Trọn Gói</title>
+
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Times New Roman', 'Times', 'serif'],
+                        display: ['Times New Roman', 'Times', 'serif'],
+                    },
+                    boxShadow: {
+                        'premium': '0 10px 30px -10px rgba(37, 99, 235, 0.15)',
+                        'glow': '0 0 20px rgba(37, 99, 235, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .glow-effect:hover {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .pulse-phone {
+            animation: pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+            }
+        }
+
+        /* Subtle grid background pattern */
+        .grid-pattern {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
+        }
+
+        .product-card img {
+            object-fit: contain !important;
+            background-color: #ffffff;
+            padding: 0.75rem;
+        }
+    </style>
+</head>
+
+<body
+    class="min-h-screen bg-secondary-50 font-sans text-secondary-800 antialiased selection:bg-primary-500 selection:text-white">
+
+    <!-- Sticky Header -->
+    <header
+        class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-40 transition-all duration-300 border-b border-secondary-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="bg-primary-600 text-white p-2 rounded-lg group-hover:bg-primary-700 transition">
+                    <i data-lucide="layers" class="w-6 h-6"></i>
+                </div>
+                <span
+                    class="text-2xl font-extrabold font-display text-primary-600 tracking-tight group-hover:text-primary-700 transition">
+                    Thạch Cao Nguyên Vũ
+                </span>
+            </a>
+
+            <!-- Navigation Desktop -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-secondary-600">
+                <a href="#dich-vu"
+                    class="hover:text-primary-600 transition-colors duration-200 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary-600 hover:after:w-full after:transition-all after:duration-200">Thi
+                    Công</a>
+                <a href="#san-pham"
+                    class="hover:text-primary-600 transition-colors duration-200 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary-600 hover:after:w-full after:transition-all after:duration-200">Vật
+                    Tư & Phụ Kiện</a>
+                <a href="#bao-gia"
+                    class="hover:text-primary-600 transition-colors duration-200 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary-600 hover:after:w-full after:transition-all after:duration-200">Báo
+                    Giá</a>
+                <a href="#lien-he"
+                    class="hover:text-primary-600 transition-colors duration-200 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary-600 hover:after:w-full after:transition-all after:duration-200">Liên
+                    Hệ</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:0903839305"
+                    class="bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-2.5 rounded-lg shadow-premium hover:shadow-glow hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    Gọi Ngay
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn"
+                class="md:hidden p-2 text-secondary-600 hover:text-primary-600 focus:outline-none"
+                aria-label="Toggle menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-secondary-100 shadow-lg px-4 py-6 space-y-4 transition-all duration-300">
+            <a href="#dich-vu"
+                class="block font-medium text-secondary-700 hover:text-primary-600 py-2 border-b border-secondary-50">Thi
+                Công</a>
+            <a href="#san-pham"
+                class="block font-medium text-secondary-700 hover:text-primary-600 py-2 border-b border-secondary-50">Vật
+                Tư & Phụ Kiện</a>
+            <a href="#bao-gia"
+                class="block font-medium text-secondary-700 hover:text-primary-600 py-2 border-b border-secondary-50">Báo
+                Giá</a>
+            <a href="#lien-he"
+                class="block font-medium text-secondary-700 hover:text-primary-600 py-2 border-b border-secondary-50">Liên
+                Hệ</a>
+            <a href="tel:0903839305"
+                class="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 rounded-lg shadow-premium flex items-center justify-center gap-2">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                Gọi Ngay: 0903 839 305
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+        class="relative bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-16 md:py-24 overflow-hidden grid-pattern">
+        <!-- Floating shapes for design aesthetic -->
+        <div class="absolute top-1/4 -left-32 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 -right-32 w-96 h-96 bg-blue-300/20 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Hero Left: Text & CTAs -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 bg-primary-100 text-primary-800 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide">
+                        <span class="flex h-2.5 w-2.5 relative">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-600"></span>
+                        </span>
+                        Đơn Vị Thiết Kế & Thi Công Uy Tín Số 1
+                    </div>
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display text-secondary-900 leading-tight">
+                        Giải Pháp Hoàn Hảo Cho <span
+                            class="text-primary-600 bg-gradient-to-r from-primary-600 to-blue-700 bg-clip-text text-transparent">Không
+                            Gian Trần Nhà</span>
+                    </h1>
+                    <p class="text-lg text-secondary-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Chuyên thi công trần thạch cao chất lượng cao và phân phối sỉ/lẻ tấm thạch cao, khung xương, phụ
+                        kiện chính hãng với giá tốt nhất thị trường.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#dich-vu"
+                            class="bg-primary-600 hover:bg-primary-700 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-premium hover:shadow-glow hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                            Xem Dịch Vụ
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#san-pham"
+                            class="bg-white text-primary-600 border-2 border-primary-600 hover:bg-primary-50 font-bold text-lg px-8 py-4 rounded-xl shadow hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                            Mua Vật Tư
+                            <i data-lucide="package" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-secondary-200 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-3xl font-extrabold text-primary-600 font-display">10+</div>
+                            <div class="text-xs text-secondary-500 font-medium uppercase mt-1">Năm kinh nghiệm</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-extrabold text-primary-600 font-display">1000+</div>
+                            <div class="text-xs text-secondary-500 font-medium uppercase mt-1">Công trình</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-extrabold text-primary-600 font-display">100%</div>
+                            <div class="text-xs text-secondary-500 font-medium uppercase mt-1">Chính hãng</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right: Premium Mockup Image -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Background glow decoration -->
+                        <div
+                            class="absolute -inset-2 bg-gradient-to-r from-primary-500 to-blue-600 rounded-2xl blur-xl opacity-30">
+                        </div>
+                        <div
+                            class="relative bg-white p-3 rounded-2xl shadow-2xl border border-secondary-100 overflow-hidden group">
+                            <img src="./assets/images/hero.png" alt="Trần thạch cao phòng khách sang trọng"
+                                class="w-full h-80 md:h-[420px] object-cover rounded-xl transition duration-500 group-hover:scale-102">
+                            <div
+                                class="absolute bottom-6 left-6 right-6 bg-secondary-900/90 backdrop-blur-md text-white p-4 rounded-lg flex items-center justify-between border border-white/10">
+                                <div>
+                                    <p class="text-xs text-primary-300 font-semibold tracking-wider uppercase">Dự án
+                                        hoàn thiện</p>
+                                    <p class="font-bold text-sm">Biệt thự phố Phú Mỹ Hưng</p>
+                                </div>
+                                <span class="bg-primary-600 text-white px-3 py-1 rounded text-xs font-bold">5★ Đánh
+                                    giá</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="dich-vu" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span
+                    class="text-primary-600 font-bold text-sm uppercase tracking-widest bg-primary-50 px-3 py-1 rounded-full">Dịch
+                    Vụ Nổi Bật</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold font-display text-secondary-900">Dịch Vụ Thi Công Chuyên
+                    Nghiệp</h2>
+                <p class="text-secondary-600 text-lg">
+                    Chúng tôi mang lại giải pháp thi công tối ưu cho mọi công trình từ căn hộ, biệt thự đến văn phòng và
+                    showroom.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Service 1 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-secondary-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="./assets/images/service-chim.png" alt="Trần Thạch Cao Chìm"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary-900/50 to-transparent"></div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow space-y-4">
+                        <div class="bg-primary-100 text-primary-700 p-3 rounded-xl w-fit">
+                            <i data-lucide="palette" class="w-6 h-6"></i>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-secondary-900 group-hover:text-primary-600 transition-colors font-display">
+                            Trần Thạch Cao Chìm</h3>
+                        <p class="text-secondary-600 flex-grow">
+                            Thiết kế phẳng, giật cấp sang trọng cho phòng khách, phòng ngủ. Giúp tạo nên điểm nhấn thẩm
+                            mỹ hoàn hảo và mở rộng không gian.
+                        </p>
+                        <a href="#bao-gia"
+                            class="text-primary-600 font-semibold hover:text-primary-700 flex items-center gap-2 group/btn mt-auto">
+                            Tư vấn thiết kế miễn phí
+                            <i data-lucide="chevron-right"
+                                class="w-4 h-4 transition-transform group-hover/btn:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-secondary-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="./assets/images/service-noi.png" alt="Trần Thạch Cao Nổi"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary-900/50 to-transparent"></div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow space-y-4">
+                        <div class="bg-primary-100 text-primary-700 p-3 rounded-xl w-fit">
+                            <i data-lucide="grid" class="w-6 h-6"></i>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-secondary-900 group-hover:text-primary-600 transition-colors font-display">
+                            Trần Thạch Cao Nổi</h3>
+                        <p class="text-secondary-600 flex-grow">
+                            Tiện lợi, dễ sửa chữa, thi công nhanh chóng. Phù hợp tuyệt đối cho văn phòng làm việc, nhà
+                            xưởng, trường học và trung tâm thương mại.
+                        </p>
+                        <a href="#bao-gia"
+                            class="text-primary-600 font-semibold hover:text-primary-700 flex items-center gap-2 group/btn mt-auto">
+                            Tư vấn thiết kế miễn phí
+                            <i data-lucide="chevron-right"
+                                class="w-4 h-4 transition-transform group-hover/btn:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-secondary-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="./assets/images/service-vach.png" alt="Vách Ngăn Thạch Cao"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary-900/50 to-transparent"></div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow space-y-4">
+                        <div class="bg-primary-100 text-primary-700 p-3 rounded-xl w-fit">
+                            <i data-lucide="layout" class="w-6 h-6"></i>
+                        </div>
+                        <h3
+                            class="text-2xl font-bold text-secondary-900 group-hover:text-primary-600 transition-colors font-display">
+                            Vách Ngăn Thạch Cao</h3>
+                        <p class="text-secondary-600 flex-grow">
+                            Giải pháp cách âm, chống cháy ưu việt. Giúp phân chia phòng khách, phòng ngủ, phòng họp linh
+                            hoạt, nhanh gọn với chi phí tiết kiệm nhất.
+                        </p>
+                        <a href="#bao-gia"
+                            class="text-primary-600 font-semibold hover:text-primary-700 flex items-center gap-2 group/btn mt-auto">
+                            Tư vấn thiết kế miễn phí
+                            <i data-lucide="chevron-right"
+                                class="w-4 h-4 transition-transform group-hover/btn:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="san-pham" class="py-20 bg-secondary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-10 space-y-4">
+                <span
+                    class="text-primary-600 font-bold text-sm uppercase tracking-widest bg-primary-50 px-3 py-1 rounded-full">Tổng
+                    Kho Vật Tư</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold font-display text-secondary-900">Phân Phối Vật Tư & Phụ
+                    Kiện</h2>
+                <p class="text-secondary-600 text-lg">
+                    Cung cấp vật tư thạch cao chính hãng chất lượng cao. Đầy đủ giấy tờ, bảo hành uy tín.
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-12">
+                <button onclick="filterCategory('all')" id="tab-all"
+                    class="filter-tab-btn px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-primary-600 text-white shadow-premium">Tất
+                    cả</button>
+                <button onclick="filterCategory('tam')" id="tab-tam"
+                    class="filter-tab-btn px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-white text-secondary-600 hover:bg-primary-50 border border-secondary-200">Tấm
+                    trần</button>
+                <button onclick="filterCategory('vinh-tuong')" id="tab-vinh-tuong"
+                    class="filter-tab-btn px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-white text-secondary-600 hover:bg-primary-50 border border-secondary-200">Khung
+                    Vĩnh Tường</button>
+                <button onclick="filterCategory('phu-kien')" id="tab-phu-kien"
+                    class="filter-tab-btn px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-white text-secondary-600 hover:bg-primary-50 border border-secondary-200">Khung
+                    thường & Phụ kiện</button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="product-grid">
+
+                <!-- Product 1 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="tam">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/tam-knauf.jpg" alt="Tấm Thạch Cao Knauf 9mm"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Tấm Thạch Cao</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Tấm Thạch Cao Knauf 9mm</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Thương hiệu Đức chất lượng cao, cách âm cách
+                        nhiệt tốt.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Tấm Thạch Cao Knauf 9mm')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="tam">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/tam-zeit.jpg" alt="Tấm Thạch Cao Zeit Gypsum"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Tấm Thạch Cao</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Tấm Thạch Cao Zeit Gypsum</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Tập đoàn GS E&C Hàn Quốc, công nghệ chống
+                        nứt ưu việt.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Tấm Thạch Cao Zeit Gypsum')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="tam">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/tam-sieu-ben-vinh-tuong.jpg" alt="Tấm Thạch Cao Siêu Bền Vĩnh Tường"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Tấm Thạch Cao</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Tấm Thạch Cao Siêu Bền Vĩnh Tường</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Lõi sợi siêu bền chịu lực uốn cực cao, chống
+                        võng tối đa.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Tấm Thạch Cao Siêu Bền Vĩnh Tường')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="tam">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/tam-nhua.jpg" alt="Tấm Trần Nhựa Hoa Văn 60x60"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Tấm Trần Nhựa</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Tấm Trần Nhựa Hoa Văn 60x60</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Tấm thả trần bằng nhựa cao cấp chống nước
+                        100%.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Tấm Trần Nhựa Hoa Văn 60x60')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="tam">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/tam-thach-cao-60-1m2.jpg" alt="Tấm Thạch Cao 60x120cm"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Tấm Thạch Cao</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Tấm Thạch Cao 60x120cm</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Kích thước lớn thích hợp thả trần nổi văn
+                        phòng, nhà xưởng.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Tấm Thạch Cao 60x120cm')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="vinh-tuong">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/u-vinh-tuong.jpg" alt="U Vĩnh Tường Xương Cá"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Khung Xương Vĩnh
+                        Tường</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Thanh chính U Vĩnh Tường (Xương Cá)</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Hệ khung xương chìm cao cấp chịu tải lớn, mạ
+                        kẽm dày dặn.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Thanh chính U Vĩnh Tường')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="vinh-tuong">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/v-vinh-tuong.jpg" alt="V Vĩnh Tường"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Khung Xương Vĩnh
+                        Tường</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Thanh viền tường V Vĩnh Tường</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Thanh góc định hình viền tường chịu lực tốt,
+                        chuẩn ly dày.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Thanh viền tường V Vĩnh Tường')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="phu-kien">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/u-kem.jpg" alt="Thanh U kẽm thường"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Khung Xương
+                        Thường</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Thanh chính U kẽm thường</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Hệ khung xương kẽm giá tốt, chống rỉ thích
+                        hợp cho nhà trọ, xưởng nhỏ.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Thanh chính U kẽm thường')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="phu-kien">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/v-kem.jpg" alt="Thanh V kẽm thường"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Khung Xương
+                        Thường</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Thanh viền tường V kẽm thường</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Thanh viền góc chất liệu sắt mạ kẽm định
+                        hình viền trần thạch cao.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Thanh viền tường V kẽm thường')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="phu-kien">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/u-vang.jpg" alt="Thanh U mạ vàng cao cấp"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Khung Xương Cao
+                        Cấp</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Thanh chính U mạ vàng cao cấp</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Hệ khung xương mạ màu vàng thẩm mỹ cao,
+                        chống ăn mòn vượt trội.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Thanh chính U mạ vàng')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="phu-kien">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/v-vang.jpg" alt="Thanh V vàng cao cấp"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Khung Xương Cao
+                        Cấp</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Thanh viền tường V vàng cao cấp</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Thanh viền góc trang trí mạ màu vàng tinh
+                        tế, chống oxy hóa.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Thanh viền tường V vàng')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="phu-kien">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/thanh-t-1m2.jpg" alt="Thanh T 1.2m"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Khung Trần Thả</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Thanh chính phụ T 1.2m (Trần Nổi)</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Khung xương định hình hệ ô bàn cờ 600x600
+                        trần nổi.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Thanh T 1.2m')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 13 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="phu-kien">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/thanh-t-3m6.jpg" alt="Thanh T 3.6m"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Khung Trần Thả</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Thanh chính T 3.6m (Trần Nổi)</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Thanh treo chịu lực chính cho trần thả nổi,
+                        liên kết pát khóa.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Thanh T 3.6m')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 14 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="phu-kien">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/ti-thach-cao.jpg" alt="Ti treo & Phụ kiện"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Phụ Kiện Liên
+                        Kết</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Ti treo thạch cao & Pát treo</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Ti ren mịn phi 4, tăng đơ thép dùng treo
+                        điều chỉnh cao độ trần.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Ti treo & Phụ kiện')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 15 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="phu-kien">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/t-60mm.jpg" alt="Thanh T 0.6m"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Khung Trần Thả</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Thanh T 0.6m (Trần Nổi)</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Thanh phụ T 0.6m liên kết tạo ô bàn cờ
+                        600x600 trần thả nổi.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Thanh T 0.6m')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                </div>
+
+                <!-- Product 16 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="phu-kien">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/keo-luoi.jpg" alt="Băng keo lưới sợi thủy tinh"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Phụ Kiện Thạch
+                        Cao</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Băng keo lưới sợi thủy tinh</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Băng keo lưới chuyên dụng dán mối nối mối
+                        nối trần chìm, chống nứt thạch cao.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Băng keo lưới sợi thủy tinh')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 17 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="phu-kien">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/vit-den.jpg" alt="Vít đen thạch cao"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Phụ Kiện Vít
+                        Bột</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Vít đen thạch cao (Drywall Screws)</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Vít đen chuyên dụng tự khoan liên kết tấm
+                        thạch cao vào hệ xương thép chắc chắn.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Vít đen thạch cao')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 18 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="phu-kien">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/vit-xa-go.jpg" alt="Vít tự khoan xà gồ mạ kẽm"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Phụ Kiện Vít
+                        Bột</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Vít tự khoan xà gồ mạ kẽm</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Vít đầu lục giác/đầu dù chịu lực tốt bắt hệ
+                        xương vào xà gồ sắt thép dày.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Vít tự khoan xà gồ')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+                <!-- Product 19 -->
+                <div class="product-card bg-white border border-secondary-200 rounded-2xl p-5 flex flex-col hover:border-primary-500 hover:shadow-xl transition-all duration-300 group"
+                    data-category="phu-kien">
+                    <div class="w-full aspect-square bg-secondary-100 rounded-xl mb-4 overflow-hidden">
+                        <img src="./assets/products/dinh-thep.jpg" alt="Đinh thép bê tông cao cấp"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <span class="text-xs text-primary-600 font-bold uppercase tracking-wider mb-1">Phụ Kiện Liên
+                        Kết</span>
+                    <h3
+                        class="font-bold text-secondary-900 text-base line-clamp-2 mb-1 group-hover:text-primary-600 transition-colors">
+                        Đinh thép bê tông cao cấp</h3>
+                    <p class="text-xs text-secondary-500 line-clamp-2 mb-4">Đinh thép chịu lực cứng cáp cố định thanh
+                        góc V viền tường vào bê tông.</p>
+                    <div class="flex items-baseline gap-2 mb-4 mt-auto">
+                        <span class="text-sm text-secondary-500">Giá bán:</span>
+                        <span class="text-red-600 text-lg font-extrabold">Liên hệ</span>
+                    </div>
+                    <button onclick="requestQuote('Đinh thép bê tông')"
+                        class="w-full bg-secondary-900 hover:bg-primary-600 text-white font-bold py-2.5 rounded-xl transition duration-200 flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        Nhận Báo Giá
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quick Quote Form Section (Báo Giá) -->
+    <section id="bao-gia"
+        class="py-20 bg-gradient-to-br from-primary-900 to-secondary-900 text-white relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-800/40 via-transparent to-transparent">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Info Text -->
+                <div class="lg:col-span-6 space-y-6">
+                    <h2 class="text-3xl md:text-4xl font-extrabold font-display">Nhận Báo Giá Thi Công Cạnh Tranh Nhất
+                    </h2>
+                    <p class="text-primary-100 text-lg leading-relaxed">
+                        Bạn đang cần báo giá thi công hoặc vật tư số lượng lớn? Hãy để lại thông tin liên hệ, đội ngũ kỹ
+                        sư của chúng tôi sẽ gọi lại tư vấn và gửi bảng giá chi tiết trong vòng 15 phút.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <div class="bg-primary-500/20 text-primary-300 p-1.5 rounded-full">
+                                <i data-lucide="check" class="w-5 h-5"></i>
+                            </div>
+                            <span>Khảo sát đo đạc hiện trạng miễn phí tại công trình</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="bg-primary-500/20 text-primary-300 p-1.5 rounded-full">
+                                <i data-lucide="check" class="w-5 h-5"></i>
+                            </div>
+                            <span>Tư vấn loại vật tư tối ưu nhất cho ngân sách của bạn</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="bg-primary-500/20 text-primary-300 p-1.5 rounded-full">
+                                <i data-lucide="check" class="w-5 h-5"></i>
+                            </div>
+                            <span>Cam kết không phát sinh bất kỳ chi phí ngoài hợp đồng</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Direct Contact CTA Card -->
+                <div class="lg:col-span-6">
+                    <div
+                        class="bg-white text-secondary-800 p-8 rounded-2xl shadow-2xl border border-secondary-100 relative overflow-hidden flex flex-col justify-between h-full">
+
+                        <!-- Top Header & Dynamic product notice -->
+                        <div>
+                            <div
+                                class="flex items-center gap-2 text-primary-600 font-bold text-xs uppercase tracking-wider mb-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-ping"></span>
+                                Đang trực tuyến (Tư vấn miễn phí)
+                            </div>
+
+                            <!-- Dynamic product banner (hidden by default) -->
+                            <div id="selected-product-banner"
+                                class="hidden mb-4 p-3.5 bg-primary-50 border border-primary-200 text-primary-900 rounded-xl text-sm flex items-center gap-2 shadow-inner">
+                                <i data-lucide="info" class="w-5 h-5 text-primary-600 shrink-0"></i>
+                                <span>Bạn đang cần tư vấn: <strong id="selected-product-name"
+                                        class="font-extrabold text-primary-700">...</strong>. Vui lòng gọi điện hoặc
+                                    nhắn Zalo dưới đây!</span>
+                            </div>
+
+                            <h3 class="text-2xl font-bold mb-4 font-display text-secondary-900">Liên hệ trực tiếp nhận
+                                báo giá nhanh</h3>
+                            <p class="text-secondary-600 text-sm leading-relaxed mb-6">
+                                Bỏ qua bước điền biểu mẫu phức tạp! Hãy nhấc máy gọi hoặc nhắn tin Zalo ngay cho đội ngũ
+                                kỹ sư của chúng tôi để được tư vấn, khảo sát đo đạc thực tế miễn phí và nhận bảng giá
+                                chiết khấu ưu đãi nhất hôm nay.
+                            </p>
+                        </div>
+
+                        <!-- Direct CTA buttons -->
+                        <div class="space-y-4 mb-6">
+                            <!-- Hotlines -->
+                            <div
+                                class="bg-secondary-50 border border-secondary-200 p-4 rounded-xl flex items-center justify-between group hover:border-primary-500 transition-all duration-300">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="bg-primary-500/10 text-primary-600 p-3 rounded-full group-hover:bg-primary-500 group-hover:text-white transition-all duration-300">
+                                        <i data-lucide="phone-call" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-secondary-500 uppercase font-bold tracking-wider">Gọi
+                                            điện trực tiếp 24/7</p>
+                                        <div class="flex flex-col sm:flex-row sm:gap-4 mt-0.5">
+                                            <a href="tel:0903839305"
+                                                class="text-lg font-extrabold text-secondary-900 hover:text-primary-600 transition-colors">0903.839.305</a>
+                                            <span class="hidden sm:inline text-secondary-300">|</span>
+                                            <a href="tel:0928577779"
+                                                class="text-lg font-extrabold text-secondary-900 hover:text-primary-600 transition-colors">0928.577.779</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span
+                                    class="bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse shrink-0 self-start mt-1">Gọi
+                                    ngay</span>
+                            </div>
+
+                            <!-- Zalo Link -->
+                            <a href="https://zalo.me/0903839305" target="_blank" rel="noopener noreferrer"
+                                class="bg-sky-50 border border-sky-100 hover:border-sky-500 p-4 rounded-xl flex items-center justify-between group transition-all duration-300">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="bg-sky-500/10 text-sky-600 p-3 rounded-full group-hover:bg-sky-500 group-hover:text-white transition-all duration-300">
+                                        <i data-lucide="message-square" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-sky-600 uppercase font-bold tracking-wider">Chat Zalo
+                                            nhận nhận báo giá</p>
+                                        <p
+                                            class="text-lg font-extrabold text-sky-900 group-hover:text-sky-600 transition-colors">
+                                            Nguyên Vũ Thạch Cao</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="bg-sky-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition duration-200 flex items-center gap-1.5 shadow-premium group-hover:bg-sky-700">
+                                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                                    Nhắn tin
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Assurances -->
+                        <div
+                            class="grid grid-cols-3 gap-2 pt-4 border-t border-secondary-100 text-center text-[11px] text-secondary-500 font-medium">
+                            <div class="flex flex-col items-center gap-1">
+                                <i data-lucide="zap" class="w-4 h-4 text-amber-500"></i>
+                                <span>Phản hồi < 5 Phút</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-1">
+                                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500"></i>
+                                <span>Khảo Sát Miễn Phí</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-1">
+                                <i data-lucide="gift" class="w-4 h-4 text-rose-500"></i>
+                                <span>Chiết Khấu Cao</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="lien-he" class="bg-secondary-900 text-white py-16 border-t border-secondary-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+
+            <!-- Col 1: Brand Info -->
+            <div class="space-y-4">
+                <a href="#" class="flex items-center gap-2">
+                    <div class="bg-primary-600 text-white p-2 rounded-lg">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-2xl font-extrabold font-display text-white tracking-tight">
+                        Nguyên Vũ
+                    </span>
+                </a>
+                <p class="text-secondary-400 leading-relaxed">
+                    Đơn vị chuyên thi công trần vách ngăn thạch cao và cung cấp sỉ lẻ vật tư phụ kiện chính hãng chất
+                    lượng cao hàng đầu thị trường.
+                </p>
+                <div class="flex items-center gap-3 pt-2 flex-wrap">
+                    <a href="#"
+                        class="text-secondary-400 hover:text-white p-2 bg-secondary-800 hover:bg-primary-600 rounded-lg transition-colors"
+                        aria-label="Facebook">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#"
+                        class="text-secondary-400 hover:text-white p-2 bg-secondary-800 hover:bg-primary-600 rounded-lg transition-colors"
+                        aria-label="Youtube">
+                        <i data-lucide="youtube" class="w-5 h-5"></i>
+                    </a>
+                    <!-- Zalo -->
+                    <a href="https://zalo.me/0903839305" target="_blank" rel="noopener noreferrer"
+                        class="text-white p-2 bg-[#0068FF] hover:bg-[#0052cc] rounded-lg transition-colors font-extrabold text-xs tracking-wider"
+                        aria-label="Chat Zalo" title="Chat Zalo">
+                        Zalo
+                    </a>
+                    <!-- Hotline -->
+                    <a href="tel:0903839305"
+                        class="text-white p-2 bg-green-600 hover:bg-green-700 rounded-lg transition-colors flex items-center gap-1"
+                        aria-label="Gọi điện" title="Gọi ngay">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Col 2: Contact Details -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold font-display border-l-4 border-primary-500 pl-3">Thông Tin Liên Hệ</h3>
+                <ul class="space-y-4 text-secondary-400">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="phone" class="w-5 h-5 text-primary-500 shrink-0 mt-0.5"></i>
+                        <div>
+                            <p class="text-xs uppercase text-secondary-500 font-semibold">Hotline tư vấn 24/7</p>
+                            <a href="tel:0903839305"
+                                class="text-white font-bold hover:text-primary-400 transition-colors">0903 839 305 /
+                                0928 577 779</a>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="mail" class="w-5 h-5 text-primary-500 shrink-0 mt-0.5"></i>
+                        <div>
+                            <p class="text-xs uppercase text-secondary-500 font-semibold">Email hỗ trợ</p>
+                            <a href="mailto:contact@thachcaonguyenvu.com"
+                                class="text-white hover:text-primary-400 transition-colors">contact@thachcaonguyenvu.com</a>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-primary-500 shrink-0 mt-0.5"></i>
+                        <div class="w-full">
+                            <p class="text-xs uppercase text-secondary-500 font-semibold">Địa chỉ cửa hàng / kho</p>
+                            <a href="https://www.google.com/maps/place/TH%E1%BA%A0CH+CAO+NGUY%C3%8AN+V%C5%A8+-+C%E1%BB%ACA+H%C3%80NG+TH%E1%BA%A0CH+CAO+V%C3%80+THI+C%C3%94NG+TR%E1%BA%A6N+TH%E1%BA%A0CH+CAO+TPHCM/@10.7838051,106.6190784,17z/data=!4m6!3m5!1s0x31752d1d29d7d5e3:0x1e67b495a577129d!8m2!3d10.7838051!4d106.6190784!16s%2Fg%2F11ldv_byg_?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank" rel="noopener noreferrer"
+                                class="text-white hover:text-primary-400 transition-colors flex flex-col gap-1">
+                                <span>266 Bình Long, P. Phú Thạnh, Q. Tân Phú, TP. Hồ Chí Minh</span>
+                                <span class="text-xs text-primary-400 font-semibold flex items-center gap-1">
+                                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    Xem trên Google Maps
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Direct Contact CTAs -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold font-display border-l-4 border-primary-500 pl-3">Liên Hệ Báo Giá Ngay</h3>
+                <p class="text-secondary-400">Không cần chờ đợi! Hãy kết nối trực tiếp với chúng tôi để nhận tư vấn và
+                    báo giá trong 2 phút.</p>
+                <div class="space-y-3 pt-2">
+                    <!-- Gọi hotline -->
+                    <a href="tel:0903839305"
+                        class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3.5 px-4 rounded-xl transition duration-200 flex items-center justify-center gap-2 shadow-md hover:scale-102 transform duration-150">
+                        <i data-lucide="phone-call" class="w-5 h-5"></i>
+                        Gọi Ngay: 0903 839 305
+                    </a>
+                    <!-- Chat Zalo -->
+                    <a href="https://zalo.me/0903839305" target="_blank" rel="noopener noreferrer"
+                        class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3.5 px-4 rounded-xl transition duration-200 flex items-center justify-center gap-2 shadow-md hover:scale-102 transform duration-150">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                        Chat Zalo Nhận Báo Giá
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Full-width Google Map -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+            <div class="rounded-2xl overflow-hidden border border-secondary-800 shadow-lg">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4678229618035!2d106.61688971092671!3d10.783810389321356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752d1d29d7d5e3%3A0x1e67b495a577129d!2zVEjhuqFDSCBDQU8gTkdVWcOKTiBWxaggLSBD4busQSBIw4BORyBUSEnDkMgQ0FPIFYgw4AgVEhJIEMgw5RORyBUUsOCTiBUSEnDkMgQ0FPIFRQSENM!5e0!3m2!1svi!2s!4v1722613200000!5m2!1svi!2s"
+                    class="w-full h-80 border-0" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-secondary-800 flex flex-col md:flex-row justify-between items-center text-secondary-500 text-sm gap-4">
+            <p>© 2026 Thạch Cao Nguyên Vũ. Tất cả quyền được bảo lưu.</p>
+            <p>Thiết kế bởi Dungxco</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons (FAB) -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+        <!-- Zalo Button -->
+        <a href="https://zalo.me/0903839305" target="_blank" rel="noopener noreferrer"
+            class="w-14 h-14 bg-[#0068FF] hover:bg-[#0052cc] text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110 relative group"
+            aria-label="Chat Zalo">
+            <span
+                class="absolute right-16 bg-secondary-900 text-white text-xs font-bold py-1 px-3 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">Chat
+                Zalo</span>
+            <!-- Zalo Logo icon representation -->
+            <span class="font-extrabold text-sm tracking-wider">Zalo</span>
+        </a>
+
+        <!-- Phone Button -->
+        <a href="tel:0903839305"
+            class="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-transform hover:scale-110 relative group pulse-phone"
+            aria-label="Gọi điện">
+            <span
+                class="absolute right-16 bg-secondary-900 text-white text-xs font-bold py-1 px-3 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">0903
+                839 305</span>
+            <i data-lucide="phone" class="w-6 h-6 animate-bounce"></i>
+        </a>
+    </div>
+
+    <!-- Quote Contact Popup Modal -->
+    <div id="quote-contact-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/70 backdrop-blur-sm hidden"
+        onclick="if(event.target===this) closeQuoteModal()">
+        <div class="bg-white rounded-2xl max-w-sm w-full shadow-2xl mx-4 overflow-hidden animate-fade-in">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-blue-700 to-blue-500 px-6 py-5 text-white relative">
+                <button onclick="closeQuoteModal()" class="absolute top-3 right-4 text-white/70 hover:text-white text-2xl leading-none">&times;</button>
+                <div class="flex items-center gap-3">
+                    <div class="bg-white/20 p-2.5 rounded-xl">
+                        <i data-lucide="tag" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-blue-100 font-semibold uppercase tracking-wider">Nhận Báo Giá</p>
+                        <h4 class="font-bold text-lg leading-tight" id="popup-product-name">Sản phẩm</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Body -->
+            <div class="px-6 py-5 space-y-4">
+                <p class="text-slate-600 text-sm">Liên hệ trực tiếp với chúng tôi để được báo giá tốt nhất &amp; tư vấn miễn phí ngay!</p>
+                <!-- Call buttons -->
+                <div class="space-y-3">
+                    <a href="tel:0903839305"
+                        class="flex items-center justify-between w-full bg-green-50 hover:bg-green-100 border border-green-200 hover:border-green-400 px-4 py-3.5 rounded-xl transition-all group">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-500 text-white p-2 rounded-full">
+                                <i data-lucide="phone-call" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] text-green-700 font-semibold uppercase tracking-wider">Gọi ngay – Hotline 1</p>
+                                <p class="text-green-900 font-extrabold text-lg tracking-wide">0903 839 305</p>
+                            </div>
+                        </div>
+                        <span class="bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full animate-pulse">Gọi</span>
+                    </a>
+                    <a href="tel:0928577779"
+                        class="flex items-center justify-between w-full bg-green-50 hover:bg-green-100 border border-green-200 hover:border-green-400 px-4 py-3.5 rounded-xl transition-all group">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-500 text-white p-2 rounded-full">
+                                <i data-lucide="phone-call" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] text-green-700 font-semibold uppercase tracking-wider">Gọi ngay – Hotline 2</p>
+                                <p class="text-green-900 font-extrabold text-lg tracking-wide">0928 577 779</p>
+                            </div>
+                        </div>
+                        <span class="bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full animate-pulse">Gọi</span>
+                    </a>
+                    <a href="https://zalo.me/0903839305" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center justify-between w-full bg-blue-50 hover:bg-blue-100 border border-blue-200 hover:border-blue-400 px-4 py-3.5 rounded-xl transition-all group">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-[#0068FF] text-white p-2 rounded-full font-extrabold text-xs flex items-center justify-center w-8 h-8">
+                                Z
+                            </div>
+                            <div>
+                                <p class="text-[11px] text-blue-700 font-semibold uppercase tracking-wider">Chat Zalo nhận báo giá</p>
+                                <p class="text-blue-900 font-extrabold text-lg tracking-wide">Nguyên Vũ Thạch Cao</p>
+                            </div>
+                        </div>
+                        <span class="bg-[#0068FF] text-white text-[10px] font-bold px-2 py-1 rounded-full">Chat</span>
+                    </a>
+                </div>
+                <p class="text-center text-xs text-slate-400 pt-1">
+                    <i data-lucide="zap" class="w-3 h-3 inline mr-1 text-amber-400"></i>Phản hồi trong vòng 5 phút
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message Dialog (Modal) -->
+    <div id="success-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-secondary-900/60 backdrop-blur-sm hidden">
+        <div
+            class="bg-white p-8 rounded-2xl max-w-md w-full shadow-2xl text-center space-y-6 mx-4 border border-secondary-100">
+            <div
+                class="bg-green-100 text-green-600 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
+                <i data-lucide="check-circle" class="w-8 h-8"></i>
+            </div>
+            <div class="space-y-2">
+                <h4 class="text-2xl font-bold font-display text-secondary-900">Gửi Yêu Cầu Thành Công!</h4>
+                <p class="text-secondary-600">Nguyên Vũ đã nhận được số điện thoại của bạn. Đội ngũ tư vấn sẽ liên hệ
+                    lại ngay trong ít phút.</p>
+            </div>
+            <button onclick="closeModal()"
+                class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 rounded-xl transition duration-200">
+                Đóng
+            </button>
+        </div>
+    </div>
+
+    <!-- Javascript Logical Code -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile Menu logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.setAttribute('data-lucide', 'menu');
+            } else {
+                icon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons();
+        });
+
+        // Close mobile menu on clicking any navigation links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.querySelector('i').setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // Show popup when someone clicks "Nhận Báo Giá" on a product card
+        function requestQuote(itemName) {
+            const modal = document.getElementById('quote-contact-modal');
+            const nameEl = document.getElementById('popup-product-name');
+            if (nameEl) nameEl.textContent = itemName;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeQuoteModal() {
+            document.getElementById('quote-contact-modal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Form submission logical handler
+        function handleQuoteSubmit(e, formId) {
+            e.preventDefault();
+            const form = document.getElementById(formId);
+
+            // Open the success popup
+            const modal = document.getElementById('success-modal');
+            modal.classList.remove('hidden');
+
+            // Reset the form
+            form.reset();
+        }
+
+        function filterCategory(category) {
+            // Update active button classes
+            const buttons = document.querySelectorAll('.filter-tab-btn');
+            buttons.forEach(btn => {
+                btn.className = "filter-tab-btn px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-white text-secondary-600 hover:bg-primary-50 border border-secondary-200";
+            });
+            const activeBtn = document.getElementById('tab-' + category);
+            if (activeBtn) {
+                activeBtn.className = "filter-tab-btn px-5 py-2.5 rounded-full font-bold text-sm transition-all bg-primary-600 text-white shadow-premium";
+            }
+
+            // Filter cards
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('success-modal');
+            modal.classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>
