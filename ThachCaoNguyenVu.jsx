@@ -682,7 +682,7 @@ export default function ThachCaoNguyenVu() {
               Đơn vị chuyên thi công trần vách ngăn thạch cao và cung cấp sỉ lẻ vật tư phụ kiện chính hãng chất lượng cao hàng đầu thị trường.
             </p>
             <div className="flex items-center gap-4 pt-2">
-              <a href="#" className="text-slate-400 hover:text-white p-2 bg-slate-800 hover:bg-blue-600 rounded-lg transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/thachcaonguyenvuu" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white p-2 bg-slate-800 hover:bg-blue-600 rounded-lg transition-colors" aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="#" className="text-slate-400 hover:text-white p-2 bg-slate-800 hover:bg-blue-600 rounded-lg transition-colors" aria-label="Youtube">

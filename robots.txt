@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /htmlmau.html
+Disallow: /thachcao.html
+
+Sitemap: https://thachcaonguyenvu.vercel.app/sitemap.xml

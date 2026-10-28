@@ -1,5 +1,41 @@
 {
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/thachcao.html" }
+    { "source": "/google03ae69b61b156659.html", "destination": "/google03ae69b61b156659.html" },
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/p/gioi-thieu.html", "destination": "/gioi-thieu.html" },
+    { "source": "/p/bao-gia-tran-thach-cao.html", "destination": "/bao-gia-tran-thach-cao.html" },
+    { "source": "/p/bao-gia-vach-thach-cao.html", "destination": "/bao-gia-vach-thach-cao.html" },
+    { "source": "/p/bao-gia-son.html", "destination": "/bao-gia-son.html" },
+    { "source": "/p/lien-he.html", "destination": "/lien-he.html" }
+  ],
+  "headers": [
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=86400"
+        }
+      ]
+    }
   ]
 }
