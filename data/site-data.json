@@ -1,0 +1,113 @@
+{
+  "settings": {
+    "siteName": "Thạch Cao Nguyên Vũ",
+    "hotline1": "0903 839 305",
+    "hotline2": "0928 577 779",
+    "address": "266 Bình Long, Phường Phú Thạnh, Quận Tân Phú, TP. Hồ Chí Minh",
+    "email": "contact@thachcaonguyenvu.com",
+    "facebook": "https://www.facebook.com/thachcaonguyenvuu",
+    "zalo": "https://zalo.me/0903839305",
+    "adminUser": "admin",
+    "adminPass": "nguyenvu2026"
+  },
+  "projects": [
+    {
+      "id": "hai-duong",
+      "title": "Công trình thi công trần thạch cao sang trọng tại Hải Dương",
+      "location": "Hải Dương - Biệt thự gia đình",
+      "image": "images/thi-cong-tran-thach-cao-hai-duong-3.jpg",
+      "excerpt": "Dự án biệt thự 3 tầng tại trung tâm TP Hải Dương sử dụng toàn bộ khung xương Vĩnh Tường mạ vàng, tấm thạch cao chịu ẩm Gyproc 9mm, phối hợp đèn led ray nam châm siêu mỏng hiện đại.",
+      "date": "2026-10-15"
+    },
+    {
+      "id": "phu-ly",
+      "title": "Thi công trần thạch cao giật cấp tại Phủ Lý Hà Nam",
+      "location": "Phủ Lý - Nhà phố hiện đại",
+      "image": "images/tran-thach-cao-giat-cap-5.jpg",
+      "excerpt": "Hoàn thiện 250m2 trần giật cấp 2 lớp kết hợp phào nẹp thạch cao sắc nét, sơn phủ Dulux 5in1 bề mặt bóng mờ sang trọng không tì vết.",
+      "date": "2026-10-10"
+    },
+    {
+      "id": "zurich",
+      "title": "Thi công hoàn thiện trần thạch cao căn hộ The Zurich – Vinhomes Ocean Park",
+      "location": "The Zurich - Vinhomes Ocean Park",
+      "image": "images/43m2-sa3-vinhomes-smart-city_8.JPG",
+      "excerpt": "Bàn giao căn hộ mẫu với trần thạch cao phẳng kết hợp điều hòa âm trần nối ống gió, đường nét vuông vức chuẩn xác đến từng milimet.",
+      "date": "2026-09-28"
+    },
+    {
+      "id": "ecopark",
+      "title": "Thi công nội thất & trần thạch cao căn hộ SF1 Sky Forest Ecopark",
+      "location": "SF1 - Ecopark Văn Giang",
+      "image": "images/0622-noi-that-can-ho-the-matrix-one_2.jpg",
+      "excerpt": "NGUYÊN VŨ tự hào đồng hành cùng các chủ nhân căn hộ cao cấp Sky Forest Ecopark với giải pháp trần thạch cao gián tiếp và vách tiêu âm cao cấp.",
+      "date": "2026-09-18"
+    }
+  ],
+  "pricing": {
+    "tran_thach_cao": [
+      {
+        "type": "Trần chìm phẳng",
+        "material": "Khung xương thường (TP.HCM), tấm Hàn Quốc Zeit Gypsum 9mm",
+        "price30_50": "135.000 VNĐ/m2",
+        "price50_100": "145.000 VNĐ/m2",
+        "priceOver100": "Thỏa thuận"
+      },
+      {
+        "type": "Trần chìm phẳng",
+        "material": "Khung xương Vĩnh Tường BASI, tấm Gyproc tiêu chuẩn 9mm",
+        "price30_50": "165.000 VNĐ/m2",
+        "price50_100": "175.000 VNĐ/m2",
+        "priceOver100": "Thỏa thuận"
+      },
+      {
+        "type": "Trần giật cấp",
+        "material": "Khung xương Vĩnh Tường BASI, tấm Gyproc tiêu chuẩn 9mm",
+        "price30_50": "175.000 VNĐ/m2",
+        "price50_100": "185.000 VNĐ/m2",
+        "priceOver100": "Thỏa thuận"
+      },
+      {
+        "type": "Trần thả 60x60",
+        "material": "Tấm phủ nhựa hoa văn cao cấp 600x600, khung xương Vĩnh Tường TopLINE Plus",
+        "price30_50": "150.000 VNĐ/m2",
+        "price50_100": "155.000 VNĐ/m2",
+        "priceOver100": "Thỏa thuận"
+      }
+    ],
+    "vach_thach_cao": [
+      {
+        "type": "Vách 1 mặt",
+        "material": "Khung xương thường, tấm thạch cao Gyproc 9mm",
+        "price": "180.000 VNĐ/m2"
+      },
+      {
+        "type": "Vách 2 mặt",
+        "material": "Khung xương Vĩnh Tường, tấm thạch cao Gyproc 9mm",
+        "price": "240.000 VNĐ/m2"
+      },
+      {
+        "type": "Vách cách âm",
+        "material": "Khung Vĩnh Tường, 2 mặt tấm Gyproc kèm bông thủy tinh tiêu âm",
+        "price": "320.000 VNĐ/m2"
+      }
+    ],
+    "son_nuoc": [
+      {
+        "type": "Sơn Maxilite",
+        "detail": "Bả 2 lớp bột, 1 lót, 2 phủ Maxilite bóng mờ",
+        "price": "45.000 VNĐ/m2"
+      },
+      {
+        "type": "Sơn Dulux EasyClean",
+        "detail": "Bả 2 lớp bột, 1 lót, 2 phủ Dulux lau chùi hiệu quả",
+        "price": "60.000 VNĐ/m2"
+      },
+      {
+        "type": "Sơn Dulux 5in1 Cao Cấp",
+        "detail": "Bả 2 lớp bột cao cấp, 1 lót kháng kiềm, 2 phủ Dulux 5in1",
+        "price": "75.000 VNĐ/m2"
+      }
+    ]
+  }
+}

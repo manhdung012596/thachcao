@@ -1,6 +1,7 @@
 {
   "cleanUrls": true,
   "rewrites": [
+    { "source": "/admin", "destination": "/admin.html" },
     { "source": "/google03ae69b61b156659.html", "destination": "/google03ae69b61b156659.html" },
     { "source": "/", "destination": "/index.html" },
     { "source": "/p/gioi-thieu.html", "destination": "/gioi-thieu.html" },
